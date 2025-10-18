@@ -54,6 +54,8 @@ Copyright: [CC BY-NC 3](https://creativecommons.org/licenses/by-nc/3.0/)
 2. **ヒト疾患とモデル動物の類似度比較**：ヒト疾患とモデル動物のオントロジータームの集合間で、各タームごとの**最大類似度スコア**を集約し、最大値（maxScore）と平均（avgScore）を求める  
 3. **0-100の値にスケーリング**：当該疾患に対する**仮想的最適モデル**（各HPO項目に対し最も高得点のモデル側項目を選ぶ）に対する百分率（maxPercentage / avgPercentage）に規格化し、その平均を **combinedPercentageScore** として用いる  
 
+![bat025f1p](https://github.com/user-attachments/assets/b7edfb54-cb67-4b14-aff6-b9e91a6fd867)
+
 ---
 
 # 主要な結果と考察
@@ -74,6 +76,8 @@ Copyright: [CC BY-NC 3](https://creativecommons.org/licenses/by-nc/3.0/)
   - 「既知のOMIM疾患が上位にランクされるか」をもとに ROC 曲線を作成。
   - 結果はマウス：AUC 0.86、ゼブラフィッシュ：AUC 0.58
     - 少なくともマウスは非常に高い性能を示し、ヒト疾患との関連を一定程度捉えていることが示された
+
+![bat025f2p](https://github.com/user-attachments/assets/5d8f669d-9711-484c-a896-6e31b8875086)
 
 ---
 
