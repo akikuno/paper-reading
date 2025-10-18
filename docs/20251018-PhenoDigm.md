@@ -1,7 +1,8 @@
 # 論文情報
 **PhenoDigm: analyzing curated annotations to associate animal models with human diseases**  
 Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.  
-*Database*, 2013, https://doi.org/10.1093/database/bat025
+*Database*, 2013, https://doi.org/10.1093/database/bat025  
+Copyright: [CC BY-NC 3](https://creativecommons.org/licenses/by-nc/3.0/)
 
 ---
 
