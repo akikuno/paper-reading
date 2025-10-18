@@ -21,8 +21,10 @@ Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.
 > [!NOTE]
 > HPO （Human Phenotype Ontology）：ヒト表現型を体系的に記述したオントロジー  
 > - https://hpo.jax.org/app/  
+> 
 > MP （Mammalian Phenotype Ontology）：マウス表現型を記述したオントロジー  
 > - https://www.informatics.jax.org/vocab/mp_ontology  
+> 
 > ZP （Zebrafish Phenotype Ontology）：ゼブラフィッシュ表現型を記述したオントロジー  
 > - https://github.com/obophenotype/zebrafish-phenotype-ontology
 
@@ -30,11 +32,12 @@ Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.
 >[!NOTE]
 > 論理定義：オントロジー概念を他の概念や属性で形式的に定義すること。  
 > - 表現型の文脈では、各表現型を、「器官」と「性質」に分割したもの
-> - 例："MP:0000266: abnormal heart morphology" は "heart"（器官）と "abnormal morphology"（性質）で定義されるので、論理定義では`has_part some (Heart and has_quality some Abnormal_morphology)` と表現される。
+> - 例："MP:0000266: abnormal heart morphology" は "heart"（器官）と "abnormal morphology"（性質）で定義されるので、論理定義では`has_part some (Heart and has_quality some Abnormal_morphology)` と表現される。  
 
 >[!NOTE]
 > 語彙マッピング：異なるオントロジー間で同義語や関連語を対応付けること。  
-> - 例："HP:0000347: Micrognathia" と "MP:0004592: small mandible" は表現は異なるが、どちらも「下顎（mandible）」という器官（UBERON:0001684）に「小さい（PATO:0000587）」という性質が付与された状態を意味する。したがって、両者の論理定義に共通して現れる UBERON（器官） と PATO（性質） の組み合わせを手がかりに、「同じ生物学的概念を指している」と機械的に橋渡しすることができる。
+> - 例："HP:0000347: Micrognathia" と "MP:0004592: small mandible" は表現は異なるが、どちらも「下顎（mandible）」という器官（UBERON:0001684）に「小さい（PATO:0000587）」という性質が付与された状態を意味する。  
+> そのため、両者の論理定義に共通して現れる UBERON（器官） と PATO（性質） の組み合わせを手がかりに、「同じ生物学的概念を指している」と表現することができる。  
 
 ---
 
@@ -63,13 +66,13 @@ Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.
 - Fig2A: MGD文献モデルに登録されている「マウス遺伝子ー疾患」関係を正解とするROC曲線を描画
   - PhenoDigmスコアが高い順に正しい疾患（MGDで文献的に対応している疾患）が上位に来るかを評価
   - 旧手法（MouseFinder）の複数の類似度指標（maxIC, avgIC, maxSimJ, avgSimJ）と比較
-  - MGD-combined score（PhenoDigmスコア）がAUC 0.92で既報を上回る性能
+  - MGD-combined score（PhenoDigmスコア）がAUC 0.92で既報を上回る性能 （既報も0.90などなので、わりと微差かも…）
 
 - Fig2B: OMIM MorbidMapに登録されている「ヒト遺伝子ー疾患」関係を正解とするROC曲線を描画
   - マウスおよびゼブラフィッシュのヒトオルソログ遺伝子について、PhenoDigmスコアを算出し、類似度の高い順に疾患をランキング。
   - 「既知のOMIM疾患が上位にランクされるか」をもとに ROC 曲線を作成。
-  - マウス：AUC 0.86、ゼブラフィッシュ：AUC 0.58
-  - 少なくともマウスは非常に高い性能を示し、ヒト疾患との関連を一定程度捉えていることが示された
+  - 結果はマウス：AUC 0.86、ゼブラフィッシュ：AUC 0.58
+    - 少なくともマウスは非常に高い性能を示し、ヒト疾患との関連を一定程度捉えていることが示された
 
 ---
 
@@ -90,7 +93,7 @@ Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.
 > https://obofoundry.org/ontology/zp.html  
 > 
 > 一方、PhenoDigm 論文が発表された 2013 年当時は、ZFIN では主に **EQ モデル（Entity–Quality モデル）** によって表現型が記述されており、形式が異なっていたようである。  
-> そのため、HPO / MP との自動対応付けが難しく、AUC が低下した（0.58）一因と考えられる。  
+> そのため、HPO / MP との自動対応付けが難しく、AUC が低下した（0.58）一因との議論あり。  
 
 ---
 
@@ -103,6 +106,7 @@ Damian Smedley, Anika Oellrich, Sebastian Köhler, et al.
   - 異種オントロジーをひとつのOWLファイルにまとめて、類似度計算を行うという発想は、いづれヒトとの比較のときに取り入れたい。
   - 概念は理解できるが、まだ実装レベルでは理解が追いついていない…
 
-- オントロジータームの集合における類似度評価指標は、TSUMUGIにも活用させていただいた
+- オントロジータームの集合における類似度評価指標は、TSUMUGIにも活用した
   - https://github.com/akikuno/TSUMUGI-dev/blob/60e2c3b84a25d5e545b4443a6ba67d99c5201af9/src/TSUMUGI/similarity_calculator.py#L335
+  - Fig1のStep2,3を読み解いて実装する作業はとても勉強になった
 
