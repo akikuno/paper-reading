@@ -48,6 +48,8 @@ PhenoDigmスコアに影響する要因を3つの視点から体系的に検証�
 
 ### 1. ヒト疾患の特徴とマウスモデルの再現性（A-C）
 
+<img width="2113" height="616" alt="image" src="https://github.com/user-attachments/assets/dbfca8fe-339c-4056-8274-daa6951ed3cf" />
+
 >[!TIP]
 > Fig2. A-Cは、「ヒト疾患側の特性」がPhenodigmスコアにどう影響するかを解析している
 
@@ -87,6 +89,10 @@ PhenoDigmスコアに影響する要因を3つの視点から体系的に検証�
 
 ### 2. マウスとヒトの表現型数・一致度の関係（D-F）
 
+<img width="2067" height="629" alt="image" src="https://github.com/user-attachments/assets/be08c8c5-c017-46df-a04a-5f5b7c128727" />
+
+
+<img width="716" height="580" alt="image" src="https://github.com/user-attachments/assets/b54dfa42-6cd4-46da-a270-1fc503d2d85b" />
 
 >[!TIP]
 > Fig2.D-Fは、「表現型の記録の多寡」がPhenodigmスコアにどう影響するかを解析している
@@ -136,6 +142,8 @@ PhenoDigmスコアに影響する要因を3つの視点から体系的に検証�
 
 
 ### 3. マウス遺伝型・表現型の網羅性とマッチ率（G-H）
+
+<img width="1391" height="575" alt="image" src="https://github.com/user-attachments/assets/b08f9b15-b23f-4d7f-826a-7c027de5061d" />
 
 >[!TIP]
 > Fig2.G, Hは、「マウス側の実験条件・データ量」がPhenodigmスコアにどう影響するかを解析している
