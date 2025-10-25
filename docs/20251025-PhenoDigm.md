@@ -1,4 +1,4 @@
-## 論文情報
+# 論文情報
 **タイトル**：Computational identification of disease models through cross-species phenotype comparison  
 **著者**：Pilar Cacheiro, Diego Pava, Helen Parkinson, Maya VanZanten, Robert Wilson, Osman Gunes, the International Mouse Phenotyping Consortium, and Damian Smedley  
 **雑誌**：Disease Models & Mechanisms, 17, dmm050604 (2024)  
