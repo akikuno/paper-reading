@@ -9,7 +9,7 @@
 
 >[!TIP]
 > 本論文のメインはPhenodigmアルゴリズムの性能評価です。  
-> 参考：Phenodigm原著：論文  
+> 参考：Phenodigm原著論文  
 > - Smedley et al., "PhenoDigm: analyzing curated annotations to associate animal models with human diseases", *Database* (2013)  
 > [10.1093/database/bat025](https://doi.org/10.1093/database/bat025)
 
