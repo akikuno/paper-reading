@@ -178,7 +178,7 @@ PhenoDigmマッチ（=マウス–ヒト間で類似スコア > 0）を二値変
 
 # 読後の感想
 
-Phenodigmを使い始めたからすると興味深い論文でした。  
+Phenodigmを使い始めた人間からすると興味深い論文でした。  
 IMPCのデータ測定の多寡や、もともと付与されているMP・HPO項目数がPhenodigmスコアに与える影響を定量的に評価しており、Phenodigmスコアの解釈に役立つ知見が得られたと思います。  
 
 [Phenodigm2](https://github.com/whri-phenogenomics/PhenoDigm2)というリポジトリもあり、もしかすると上記のデータセット由来のバイアスを補正するような改良が加えられているかもしれません。  
