@@ -10,3 +10,6 @@ Progress, Title, URL, Copyright, 備考
 □ ,Managing Your Research Pipeline, https://doi.org/10.1017/S1049096516000160, CC-BY 4.0, 研究パイプライン管理に関する論文
 □,In silico biological discovery with large perturbation models, https://www.nature.com/articles/s43588-025-00870-1, CC-BY 4.0, 大規模摂動モデルに関する論文
 □,Mouse genomic variation and its effect on phenotypes and gene regulation, https://www.nature.com/articles/nature10413, CC BY-NC-SA 3.0, マウスゲノムバリエーションに関する論文
+□, PerturbAtlas: a comprehensive atlas of public genetic perturbation bulk RNA-seq datasets, https://academic.oup.com/nar/article/53/D1/D1112/7798787, CC BY-NC 4.0, PerturbAtlas
+□, cellxgene: a performant scalable exploration platform for high dimensional sparse matrices, https://www.biorxiv.org/content/10.1101/2021.04.05.438318v1.full.pdf+html, CC0 1.0, cellxgene論文①
+□, CZ CELL×GENE Discover: A single-cell data platform for scalable exploration, analysis and modeling of aggregated data, https://www.biorxiv.org/content/10.1101/2023.10.30.563174v1.full.pdf+html, CC-BY 4.0, cellxgene論文②
