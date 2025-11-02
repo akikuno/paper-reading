@@ -28,9 +28,9 @@ Copyright: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 > ` we broadly define pathways as groups of genes that share similar biological functions and represent a unit or module within the same molecular network`
 
 
-## Fig 1： 経路レベルでの収斂進化の理論的な分類とその生物学的具体例
+## Fig 1： 経路レベルでの収斂進化の理論的な分類とその具体例
 
-<img width="566" height="759" alt="image" src="https://github.com/user-attachments/assets/0bb15fe6-3674-4b44-960e-6a460e2a9c37" />
+<img width="2507" height="3361" alt="image" src="https://github.com/user-attachments/assets/40982c4f-fce1-48f5-9ef8-dd7b00b9cd6e" />
 
 
 Fig 1は、遺伝的収斂が**どの階層で生じるか**を、  
@@ -117,7 +117,7 @@ Fig.1の4つのネットワークでは、左右がそれぞれ祖先群と適�
 
 ##  Fig 2：形質の複雑性と分岐時間が収斂進化に与える影響  
 
-<img width="765" height="704" alt="image" src="https://github.com/user-attachments/assets/e73c65c8-d7f4-481f-a1a2-973b6eae6628" />
+<img width="3389" height="3118" alt="image" src="https://github.com/user-attachments/assets/2b0360ff-50de-4114-bad7-eaa3d352a4e0" />
 
 
 ### (A) 形質複雑性 × 分岐時間の二次元モデル
@@ -218,7 +218,7 @@ Fig.1の4つのネットワークでは、左右がそれぞれ祖先群と適�
 
 | 手法                                                   | 説明                                                                 |
 | ------------------------------------------------------ | -------------------------------------------------------------------- |
-| **共発現解析**                                         | 発現相関パターンから機能モジュールを推定。                           |
+| **共発現解析（WGCNA）**                                         | 発現相関パターンから機能モジュールを推定。                           |
 | **遺伝子制御ネットワーク推定**                         | 発現＋モチーフ＋比較ゲノミクス＋クロマチン情報を統合。               |
 | **PPI予測（STRING, AlphaFold2）**                      | 既知相互作用・構造モデリングから推定。                               |
 | **マルチオミクス統合（MOFA, iClusterPlus, mixOmics）** | 発現・代謝・構造など複数データ型を統合し、包括的ネットワークを構築。 |
@@ -233,9 +233,9 @@ Fig.1の4つのネットワークでは、左右がそれぞれ祖先群と適�
 進化過程で、アミノ酸置換や制御要素変化、遺伝子重複・喪失が生じ、経路構造が再配線される。  
 したがって、種間で経路を比較する際には、異なる構造をどう整合させるかが課題である。
 
-### 比較戦略：
+### Fig.4 比較戦略：
 
-<img width="2733" height="1624" alt="image" src="https://github.com/user-attachments/assets/7f571896-93fe-4f5d-bc45-c4d8be44058d" />
+<img width="2304" height="1407" alt="image" src="https://github.com/user-attachments/assets/9c6b33f7-e29c-4bb6-a66f-a27d4175c1ff" />
 
 1. **モジュール構成の比較**  
    - 既知の経路やGO分類に基づく比較（Fig.4E）  
