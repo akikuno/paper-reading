@@ -11,7 +11,7 @@ Copyright: CC BY-NC 4.0
 ## 背景と目的
 
 Rattus norvegicus（実験用ラット）は、行動・生理・薬理など多様な研究で重要なモデル動物である。  
-既存の参照ゲノム **mRatBN7.2**（2020）は、BN/NHsdMcwiを基にしており、PacBio CLR を中心とした“低精度だが長いリード”に基づくもので、  
+既存の参照ゲノム **mRatBN7.2**（2020）は、BN/NHsdMcwiを基にしており、PacBio CLRを中心とした低精度だが長いリードに基づくもので、  
 **構造的欠落・ハプロタイプの誤認・反復配列の不完全な取り扱い**といった問題を抱えていた。
 
 > [!NOTE]
@@ -37,9 +37,14 @@ Rattus norvegicus（実験用ラット）は、行動・生理・薬理など多
 最新の **PacBio HiFi（高精度長鎖リード）＋ 光学マッピング＋ Hi-C** を組み合わせて、  
 **精度・完全性・構造連続性のすべてを向上させた新しい参照ゲノム「GRCr8」** を構築することである。
 
+>[!NOTE]
+> 光学マッピング optical mapping
+
 ---
 
 ## 主要な実験手法と解析
+
+![alt text](images/rat-genome/fig1.png)
 
 ### データ生成
 - **PacBio HiFi（40×）**：BN/NHsdMcwi ♂ の高精度長鎖リード  
@@ -73,10 +78,11 @@ Rattus norvegicus（実験用ラット）は、行動・生理・薬理など多
 - k-mer 解析（Fig.2）では BN が**完全に近い近交系＝実質1倍体**であることが確認され、  
   mRatBN7.2 で推定されていた“偽ハプロタイプ分離”が誤りであったことが示唆された。
 
+![alt text](images/rat-genome/fig2.png)
+
 > [!NOTE]
 > BUSCO: Benchmarking Universal Single-Copy Orthologs
-> 哺乳類なら必ず1コピーあるはずの“保存遺伝子セット”の網羅率を測る指標。
-
+> 哺乳類なら必ず1コピーあるはずの“保存遺伝子セット”の網羅率を測る指標.
 
 > [!NOTE]
 > Merqury QV  
