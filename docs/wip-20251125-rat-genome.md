@@ -11,34 +11,180 @@ Copyright: CC BY-NC 4.0
 ## 背景と目的
 
 Rattus norvegicus（実験用ラット）は、行動・生理・薬理など多様な研究で重要なモデル動物である。  
-既存の参照ゲノム **mRatBN7.2**（2020）は、BN/NHsdMcwiを基にしており、PacBio CLRを中心とした低精度だが長いリードに基づくもので、  
-**構造的欠落・ハプロタイプの誤認・反復配列の不完全な取り扱い**といった問題を抱えていた。
+ラットの参照ゲノムはBN/NHsdMcwiを基に更新が続けられており、既存の参照ゲノム**mRatBN7.2**（2020）は、PacBio CLRを中心に構築されていたが、
+
+- 反復配列（rDNA, centromere, Y染色体など）の欠落  
+- CLRの高エラー率により発生した偽SNP  
+- 近交系BNラットを偽二倍体として処理したことによる誤ったハプロタイプ分離  
+
+といった問題が残っていた。
 
 > [!NOTE]
-> BN/NHsdMcwi ラット  
+> BN/NHsdMcwi  
 > Brown Norway（BN）系統の一つで、実験用ラットとして広く利用されている近交系。  
 > Brown Norway 系統（BN）をHarlan Sprague Dawley（Hsd）が取り扱い、ウィスコンシン医科大学（Mcwi）で維持されているサブコロニー。
 > [過排卵処理(PMSG・hCG投与)しても1匹当たり平均して2.2個しか排卵しない](https://pmc.ncbi.nlm.nih.gov/articles/PMC5081740/)ので、生殖工学技術に対する適応に難がある。
 
-特に、
-
-- BN ラットは高度に近交化しており“実質1倍体”であるのに、mRatBN7.2 では“偽二倍体”として処理  
-- Y染色体・rDNA領域・セントロメア・テロメアなどの**高反復領域の欠落**  
-- 多数の遺伝子が未注釈または未配置  
-
-といった制約が、下流の遺伝学解析に影響していた。
 
 > [!NOTE]
 > 偽二倍体（pseudo-diploid）  
 > 近交系などで実質的に同一配列であるにもかかわらず、二倍体としてアセンブリされてしまう現象。PacBio CLR の高エラー率のために、非常に似た重複領域（segmental duplication）が、誤って“異なるアレル”とみなされたことによって、一方のコピーは “primary assembly（主ハプロタイプ）”、もう一方は “alternate assembly（代替ハプロタイプ）” として分離されてしまう。その結果、**片方が主配列から落とされる（喪失する）**という事態が発生した。
 
 
-**本研究の目的**は、  
-最新の **PacBio HiFi（高精度長鎖リード）＋ 光学マッピング＋ Hi-C** を組み合わせて、  
-**精度・完全性・構造連続性のすべてを向上させた新しい参照ゲノム「GRCr8」** を構築することである。
+そこで著者らは**PacBio HiFi（高精度長鎖リード）＋ 光学マッピング (Bionano)＋ Hi-C (Arima)** を組み合わせて、  
+精度・完全性・構造連続性を大幅に向上させた新しい参照ゲノム**GRCr8** を構築した。
 
->[!NOTE]
-> 光学マッピング optical mapping
+
+## 結果
+
+### アセンブリ
+
+![alt text](images/rat-genome/fig1.png)
+
+Fig.1 に示すパイプラインを用い、
+
+1. **HiCanu による HiFi de novo assembly**  
+2. 光学マップ（Bionano）によるハイブリッドスキャフォールディング  
+3. **Hi-C（SALSA2）による長距離構造補正**  
+4. mRatBN7.2 をテンプレートとした **RagTag による染色体組み立て**  
+5. PacBio CLR で gap filling  
+6. Illumina（Pilon）による polishing
+
+> [!NOTE]
+> BUSCO: Benchmarking Universal Single-Copy Orthologs
+> 哺乳類なら必ず1コピーあるはずの“保存遺伝子セット”の網羅率を測る指標.
+
+> [!NOTE]
+> Merqury QV  
+> アセンブリの塩基精度を k-mer ベースで評価する指標。
+> QV: 品質値（Quality Value）であり、数値が高いほどエラー率が低い。
+> ```math
+> QV = -10 \times \log_{10}\!\left( \mathrm{error\_rate} \right)
+>```
+> 上の定義式から、エラー率は以下のように求められる。
+> ```math
+> \mathrm{error\_rate}
+>   = 10^{-\,QV/10}
+> ```
+> よって、GRCr8 の QV=59.5 からエラー率を計算すると、
+> ```math
+> \mathrm{error\_rate}
+>   \approx 10^{-\frac{59.5}{10}}
+>   = 10^{-5.95}
+>   \approx 1.1 \times 10^{-6}
+> ```
+> すなわち、**1 Mb あたり約1.1箇所の塩基エラー**に相当する。
+
+
+
+**主なアセンブリ指標：**
+
+- **総サイズ 2.8496 Gb（98.7% が染色体配置）**  
+- **Scaffold N50 = 137 Mb（染色体スケール）**  
+- Merqury 解析で **QV=59.5（誤り率 ≈ 1.1×10⁻⁶）**  
+- BUSCO（Glires）**99.7% 完全**
+
+k-mer 解析（Fig.2）では、BN/NHsdMcwi が**高度に近交化した「実質1倍体系統」**であることが確認され、  
+mRatBN7.2 の“偽ハプロタイプ分離”が不要だったことが明確となった。
+
+
+![alt text](images/rat-genome/fig2.png)
+
+
+## Identification of new components of the assembly  
+（新しく取り込まれた領域）
+
+GRCr8 は反復性の高い領域を多数回収しており、特に：
+
+- **Chr3 / 11 / 12 の rDNA クラスター領域**  
+- **Chr19 の巨大重複領域（>15 Mb）**  
+- **ChrY のヘテロクロマチン（18 Mb → 59 Mb に増加）**
+
+が大きく改善された（Table 3, Fig.4）。
+
+### セントロメア領域（Fig.3）
+StainedGlass により、以下を含む**0.5〜5 Mb の強い自己相同性ブロック**が検出された：
+
+- メタセントリック染色体（13,14,15,16,17,18,19,20）  
+- 一部のアクロセントリック・テロセントリック染色体
+
+### テロメア領域（Table 2）
+TTAGGG 反復が多数の染色体で mRatBN7.2 より大幅に延長して検出され、  
+**telomere-to-telomere に近い構造的完成度**を達成している。
+
+### 新規遺伝子
+NCBI RefSeq により：
+
+- **780 個の “unmapped gene”**（mRatBN7.2 では位置不明）  
+- **373 個の “novel gene”**（既存領域にあったが未注釈）
+
+合計 **1,100 以上の新規タンパク質コード遺伝子**が注釈された。
+
+特に Chr19 では、Iso-Seq（Fig.5）で精巣特異的な **Speer 類似遺伝子群**の多数の発現が確認され、  
+性染色体ドライブ関連領域の大幅な拡張が示唆された。
+
+---
+
+## The pseudoautosomal regions of the sex chromosomes  
+（性染色体 PAR の解析）
+
+ヒトでは X-Y に多数の PAR 遺伝子が存在するが、マウスでは大部分が消失している。  
+本研究では、ヒト PAR の 16 遺伝子のラットにおける位置を調査（Table 5）。
+
+結果：
+
+- **12 遺伝子：常染色体に再配置**  
+- **4 遺伝子：完全消失**  
+- **X-Y 間の真正の PAR は存在せず**
+
+→ ラットは **PAR がほぼ完全に退化した哺乳類**であり、  
+X-Y 間組換えは限定的である可能性が高い。
+
+---
+
+## Gene annotation（遺伝子アノテーション）
+
+GRCr8 は NCBI RefSeq によりアノテーションされ、
+
+- mRNA：85,576  
+- コーディング遺伝子：23,154  
+- noncoding RNA：30,129  
+- pseudogene：8,687  
+
+など、**mRatBN7.2 より包括的かつ整合的な遺伝子セット**が得られた（Table 6）。
+
+Liftoff による比較では、mRatBN7.2 の遺伝子の大部分が GRCr8 に移植可能であり、  
+構造的欠落がほぼないことが確認された。
+
+---
+
+## Base-level assembly accuracy（塩基精度）
+
+Merqury QV=59.5 に加え、  
+多系統の近交系ラット42系統で共有される“偽変異”の解析により：
+
+- mRatBN7.2：**129,000 の偽 SNP が全系統で共有**  
+→ CLR のエラーが主因  
+- GRCr8：**わずか 550**  
+
+→ **誤った変異がほぼ除去された参照ゲノム**になった。
+
+---
+
+# Discussion（考察）
+
+GRCr8 は以下の点で mRatBN7.2 を本質的に上回る：
+
+- **正しい 1 倍体系統として構築された最初のラット参照ゲノム**  
+- 反復領域（rDNA, centromere, telomere, Y染色体）の大幅回収  
+- セクシャルドライブ関連の多コピー遺伝子群の検出  
+- 塩基精度（QV59.5）と構造精度（N50=137 Mb）の両立  
+- 大規模欠落が消失し、“偽変異”が激減
+
+著者らは、今後 ONT ultra-long などによる T2T（telomere-to-telomere）化や、  
+他の近交系（SHR, F344）の高精度ゲノム整備によって、  
+ラット遺伝学・生殖生物学・行動研究がさらに発展すると述べている。
+
 
 ---
 
@@ -69,41 +215,6 @@ Rattus norvegicus（実験用ラット）は、行動・生理・薬理など多
 ## 主要な結果と考察
 
 ### 1. アセンブリ品質の大幅改善
-
-- **総サイズ：2.8496 Gb**
-  - 98.7% が染色体（Chr1–Chr20, X, Y）に配置 
-- **Scaffold N50：137 Mb**  
-- **BUSCO：99.7%**（mRatBN7.2 と同等だが、構造的完全性が向上）  
-- **Merqury QV：59.5（極めて高精度）**  
-- k-mer 解析（Fig.2）では BN が**完全に近い近交系＝実質1倍体**であることが確認され、  
-  mRatBN7.2 で推定されていた“偽ハプロタイプ分離”が誤りであったことが示唆された。
-
-![alt text](images/rat-genome/fig2.png)
-
-> [!NOTE]
-> BUSCO: Benchmarking Universal Single-Copy Orthologs
-> 哺乳類なら必ず1コピーあるはずの“保存遺伝子セット”の網羅率を測る指標.
-
-> [!NOTE]
-> Merqury QV  
-> アセンブリの塩基精度を k-mer ベースで評価する指標。
-> QV: 品質値（Quality Value）であり、数値が高いほどエラー率が低い。
-> ```math
-> QV = -10 \times \log_{10}\!\left( \mathrm{error\_rate} \right)
->```
-> 上の定義式から、エラー率は以下のように求められる。
-> ```math
-> \mathrm{error\_rate}
->   = 10^{-\,QV/10}
-> ```
-> よって、GRCr8 の QV=59.5 からエラー率を計算すると、
-> ```math
-> \mathrm{error\_rate}
->   \approx 10^{-\frac{59.5}{10}}
->   = 10^{-5.95}
->   \approx 1.1 \times 10^{-6}
-> ```
-> すなわち、**1 Mb あたり約1.1箇所の塩基エラー**に相当する。
 
 
 ### 2. 染色体配列の大幅な増加（Table 3）
