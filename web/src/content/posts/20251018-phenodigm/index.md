@@ -1,7 +1,7 @@
 ---
 title: 種をまたぐ表現型類似度指標の開発
-published: 2025-10-19
-tags: [マウス, ヒト, オントロジー, バイオインフォマティクス]
+published: 2025-10-18
+tags: [マウス, ヒト, オントロジー, バイオインフォマティクス, PhenoDigm]
 category: 論文
 draft: false
 ---
