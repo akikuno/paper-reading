@@ -19,7 +19,7 @@ Rattus norvegicus（実験用ラット）は、行動・生理・薬理など幅
 
 > [!NOTE]
 > BN/NHsdMcwi  
-> Brown Norway（BN）系統の一つで、実験用ラットとして広く利用されている近交系。  
+> Brown Norway系統の一つで、実験用ラットとして広く利用されている近交系。  
 > Brown Norway系統（BN）をHarlan Sprague Dawley（Hsd）が取り扱い、ウィスコンシン医科大学（Mcwi）で維持されているサブコロニー。  
 > [過排卵処理(PMSG・hCG投与)しても1匹当たり平均して2.2個しか排卵しない](https://pmc.ncbi.nlm.nih.gov/articles/PMC5081740/)ので、生殖工学技術に対する適応に難あり😓  
 
