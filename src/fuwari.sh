@@ -1,5 +1,9 @@
 #!/bin/bash
 
-# npm create fuwari@latest
+npm create fuwari@latest
 
-(cd fuwari && pnpm run dev)
+(cd web && pnpm add -D @iconify-json/fa6-brands)
+(cd web && pnpm add -D @iconify-json/vaadin)
+
+(cd web && pnpm run dev)
+
