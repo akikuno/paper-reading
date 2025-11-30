@@ -54,20 +54,24 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Akihiro Kuno",
-	bio: "実験動物学 Ｘ バイオインフォマティクス",
+	name: "久野 朗広 (Akihiro Kuno)",
+	bio: "実験動物学 x バイオインフォマティクス",
 	links: [
 		{
-			name: "X",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://x.com/akicuno",
-		},
+			name: "Researchmap",
+			icon: "heroicons-outline:academic-cap",
+			url: "https://researchmap.jp/7000027584"},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/akikuno",
+		},
+		{
+			name: "X",
+			icon: "fa6-brands:square-x-twitter", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://x.com/akicuno",
 		},
 	],
 };

@@ -38,9 +38,6 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.8
         version: 5.2.8
-      '@iconify-json/fa6-brands':
-        specifier: ^1.2.6
-        version: 1.2.6
       '@iconify-json/fa6-regular':
         specifier: ^1.2.4
         version: 1.2.4
@@ -147,6 +144,12 @@ importers:
       '@biomejs/biome':
         specifier: 2.2.5
         version: 2.2.5
+      '@iconify-json/fa6-brands':
+        specifier: ^1.2.6
+        version: 1.2.6
+      '@iconify-json/heroicons-outline':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@rollup/plugin-yaml':
         specifier: ^4.1.2
         version: 4.1.2(rollup@2.79.2)
@@ -1096,6 +1099,9 @@ packages:
 
   '@iconify-json/fa6-solid@1.2.4':
     resolution: {integrity: sha512-LmDNNdJVyvF5mPm1yxWvL8KjCc/E8LzoqnF1LNTVpyY2ZJRUlGOWuPIThdbuFBF2IovgttkIyumhyqfmlHdwKg==}
+
+  '@iconify-json/heroicons-outline@1.2.1':
+    resolution: {integrity: sha512-QNYV4/KsW8Ww9a3B+hxDntS5BwLLbErKpL1V3MkvB8X+ZVTX5VLxjlj8rAEih+GCDWzaiZJOrdO/pagvsuBkXg==}
 
   '@iconify-json/material-symbols@1.2.40':
     resolution: {integrity: sha512-utXUazVsZ/cXJCKVIOdqLgwgmuy3Yx0dJtTk771d+O7NSdklUR42thl0H8L5db07I+TMS56BzPAf8vEDH68tdQ==}
@@ -6298,6 +6304,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/fa6-solid@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/heroicons-outline@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
