@@ -55,7 +55,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "久野 朗広 (Akihiro Kuno)",
-	bio: "🐁 x 💻️ x ⚕️",
+	bio: "実験動物学 x 情報学 x 医学",
 	links: [
 		{
 			name: "Researchmap",
