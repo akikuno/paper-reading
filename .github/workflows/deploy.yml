@@ -1,14 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # mainブランチにpushされたときに実行
   push:
     branches: [ main ]
-
-  # GitHubのActionsタブから手動実行も可能にする
   workflow_dispatch:
 
-# このジョブがリポジトリをクローンして、Pagesにデプロイできるように権限を付与
 permissions:
   contents: read
   pages: write
@@ -23,7 +19,9 @@ jobs:
 
       - name: Install, build, and upload your site
         uses: withastro/action@v5
-        # 必要があれば with: や env: をここに追記
+        with:
+          path: web
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
