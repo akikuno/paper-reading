@@ -17,7 +17,7 @@ Status: HHS Public Access / Author Manuscript (Standard Copyright)
 
 ---
 
-> [!CAUTION]
+> [!NOTE]
 > 本論文は**2017年**の総説です。
 
 >[!NOTE]
