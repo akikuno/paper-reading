@@ -15,7 +15,7 @@ doi: [10.1038/nrg.2017.19](https://doi.org/10.1038/nrg.2017.19)
 PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)  
 著作権: HHS Public Access / Author Manuscript (Standard Copyright)  
 
----
+-----
 
 > [!NOTE]
 > 本論文は**2017年**の総説です。
@@ -33,6 +33,7 @@ PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
 
 本レビューでは、ヒトとマウスの比較トランスクリプトミクスの主な知見を概観し、マウスがヒトの適切なモデルとなる条件を考察しています。  
 
+-----
 
 ### 1. ヒトとマウスのゲノム (Human and mouse genomes)
 
@@ -61,7 +62,6 @@ PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
 
 * **その他:** snoRNA遺伝子の約30%は異なる発現プロファイルを持つなど、種間で違いが見られる
 
----
 
 ### 2. トランスクリプトームの保存性 (Conservation of transcriptomes)
 
@@ -93,7 +93,6 @@ PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
 
 * **プロモーターの乖離:** プロモーター配列の保存性は遺伝子本体よりも低いにもかかわらず、発現レベルは保存されている。これは、転写因子（TF）の結合位置が変わっても発現を維持するような補償メカニズムが働いているためと考えられている
 
----
 
 ### 3. 比較遺伝子制御 (Comparative gene regulation)
 
@@ -125,7 +124,6 @@ PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
 
 * **シングルセル解析の必要性:** シングルセルRNA-seq技術を用いることで、細胞タイプごとの真の種間差を解明し、発生タイミングの違いなどを明らかにすることが期待される
 
----
 
 ### 結論と展望 (Conclusions and perspectives)
 
@@ -137,7 +135,9 @@ PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
     3.  発現データだけでなく、時間経過や外部刺激への応答など、動的なプロセス（4次元的なマトリックス）での比較を行うこと
 * **個別化:** 将来的には、個人のゲノムに合わせてカスタマイズされたマウスモデルが作られる時代が来るかもしれない
 
-# 読後の感想
+-----
+
+## 読後の感想
 
 大学院生の頃に読んだ総説を、改めて読み返しました。約10年前の論文ではありますが、現在直面している課題にも通じる知見が多く、非常に示唆に富んでいました。
 
