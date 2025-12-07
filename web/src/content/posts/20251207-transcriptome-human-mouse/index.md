@@ -8,12 +8,12 @@ draft: false
 
 
 ## 論文情報
-**Comparative transcriptomics in human and mouse**
-Alessandra Breschi, Thomas R. Gingeras, and Roderic Guigó
-*Nature Reviews Genetics*, 2017 July; 18(7): 425-440
-doi: [10.1038/nrg.2017.19](https://doi.org/10.1038/nrg.2017.19)
-PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)
-Status: HHS Public Access / Author Manuscript (Standard Copyright)
+**Comparative transcriptomics in human and mouse**  
+Alessandra Breschi, Thomas R. Gingeras, and Roderic Guigó  
+*Nature Reviews Genetics*, 2017 July; 18(7): 425-440  
+doi: [10.1038/nrg.2017.19](https://doi.org/10.1038/nrg.2017.19)  
+PMCID: [PMC6413734](https://pmc.ncbi.nlm.nih.gov/articles/PMC6413734/)  
+著作権: HHS Public Access / Author Manuscript (Standard Copyright)  
 
 ---
 
