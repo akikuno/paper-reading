@@ -48,6 +48,7 @@ Status: HHS Public Access / Author Manuscript (Standard Copyright)
 
 * **保存性の低さ:** lncRNAはタンパク質コード遺伝子に比べて配列の保存性が低く、オーソログの同定が困難
   * 約1,000～2,000のlncRNAがヒト・マウス間でオーソログとして同定されている
+  * lncRNAオーソログの同定法が活発な研究分野となっている
 
 #### 1.3 低分子ノンコーディングRNA (Small non-coding RNAs)
 
