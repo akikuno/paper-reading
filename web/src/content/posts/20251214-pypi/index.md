@@ -123,11 +123,11 @@ jobs:
 ```
 
 > [!NOTE]
-> 最新の情報は以下のURLを参照してください。  
+> 最新の情報は以下の公式ドキュメントを参照してください。  
 > https://docs.github.com/en/actions/tutorials/build-and-test-code/python#publishing-to-pypi  
 
 > [!WARNING]  
-> 上記URLの例では、最終行を  
+> 上記の公式ドキュメントでは、最終行を  
 > ````uses: pypa/gh-action-pypi-publish@6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d````  
 > のようにコミットハッシュを直接指定することで、利用するActionのバージョンを固定しています。  
 >  
