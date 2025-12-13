@@ -132,7 +132,7 @@ jobs:
 > のようにコミットハッシュを直接指定することで、利用するActionのバージョンを固定しています。  
 >  
 > しかし、私の環境では  
-> ````An action could not be found at the URI 'https://api.github.com/repos/pypa/gh-action-pypi-publish/tarball/6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d' (8411:E059A:105FB4:15F205:692537E5)````  
+> *An action could not be found at the URI 'https://api.github.com/repos/pypa/gh-action-pypi-publish/tarball/6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d' (8411:E059A:105FB4:15F205:692537E5)*  
 > というエラーが発生しました（実行ログは[こちら](https://github.com/akikuno/TSUMUGI-dev/actions/runs/19658793263)）。  
 >  
 > そのため、本ドキュメントでは  
