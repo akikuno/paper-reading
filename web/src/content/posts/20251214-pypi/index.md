@@ -122,7 +122,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > 最新の情報は以下のURLを参照してください。  
 > https://docs.github.com/en/actions/tutorials/build-and-test-code/python#publishing-to-pypi  
 
