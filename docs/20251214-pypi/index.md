@@ -9,13 +9,13 @@
 **Trusted Publishing（信頼できる公開）**は、  
 PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直接認証する仕組みです。
 
+この方式により、従来必要であった長期有効なAPIトークンをGitHub側に保存する必要がなくなります。
+
 ### 🔹従来方式（API Token）
 - PyPIでAPI Tokenを発行  
 - GitHub Secretsに手動で貼り付け  
 - 認証にTokenを使用  
 → 長期トークンなので漏洩リスクがある
-
-
 
 ### 🔹Trusted Publishing（OIDC）
 - GitHub Actionsが短期（15分だけ有効）の**OIDCトークン**を発行  
@@ -30,6 +30,7 @@ PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直�
 ## 2-1. 既存プロジェクトをOIDC（Trusted Publishing）対応にする
 
 1. PyPIにログイン  
+   https://pypi.org/account/login/  
 2. 対象プロジェクトページへ  
 3. 左メニューから  
    **“Publishing → Add a trusted publisher”**を開く  
@@ -54,16 +55,11 @@ PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直�
 
 ---
 
-## 2-2. 新規にPyPIプロジェクトを作成する場合
-
-1. PyPIで“Add a new project”からパッケージ名を予約  
-2. 上記と同様に“Add a trusted publisher”を設定
-
----
-
 # 3. GitHub Actionsの設定
 
-`.github/workflows/pypi.yml`を作成します。
+`.github/workflows/pypi.yml`を作成します。  
+GitHubでリリースが公開されたときに自動的にPyPIへアップロードするワークフローの例を以下に示します。  
+
 
 ```yaml
 name: Upload Python Package
@@ -124,8 +120,18 @@ jobs:
 > 最新の情報は以下のURLを参照してください。  
 > https://docs.github.com/en/actions/tutorials/build-and-test-code/python#publishing-to-pypi  
 
-> [!WARNING]
-> なお、上記のURLにて最終行は`uses: pypa/gh-action-pypi-publish@6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d`と、ハッシュ値をハードコーディングすることでreleaseのバージョンを固定していますが、私の環境では`An action could not be found at the URI 'https://api.github.com/repos/pypa/gh-action-pypi-publish/tarball/6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d' (8411:E059A:105FB4:15F205:692537E5)`という[エラーが出てしまいました](https://github.com/akikuno/TSUMUGI-dev/actions/runs/19658793263)。そのため、ここでは`uses: pypa/gh-action-pypi-publish@release/v1`と、releaseの最新版を常に使う形にしています。
+> [!WARNING]  
+> 上記URLの例では、最終行を  
+> ````uses: pypa/gh-action-pypi-publish@6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d````  
+> のようにコミットハッシュを直接指定することで、利用するActionのバージョンを固定しています。  
+>  
+> しかし、私の環境では  
+> ````An action could not be found at the URI 'https://api.github.com/repos/pypa/gh-action-pypi-publish/tarball/6f7e8d9c0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d' (8411:E059A:105FB4:15F205:692537E5)````  
+> というエラーが発生しました（実行ログは[こちら](https://github.com/akikuno/TSUMUGI-dev/actions/runs/19658793263)）。  
+>  
+> そのため、本ドキュメントでは  
+> ````uses: pypa/gh-action-pypi-publish@release/v1````  
+> と指定し、常にrelease/v1系列の最新安定版を利用する構成としています。
 
 ---
 
@@ -134,5 +140,5 @@ jobs:
 1. GitHubで新しいReleaseを作成（例: [`v0.5.0`](https://github.com/akikuno/TSUMUGI-dev/releases/tag/0.5.0)）  
 2. Actionsが自動的に起動  
 3. PyPIにパッケージがアップロードされる  
-4. 反映されるまで数分待つ  
+4. 反映されるまで10秒待つ  
 5. https://pypi.org/project/`<プロジェクト名>`/ で公開を確認（例: https://pypi.org/project/TSUMUGI/）
