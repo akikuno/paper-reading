@@ -8,7 +8,6 @@ draft: false
 
 このドキュメントは、PyPIが公式に提供する**Trusted Publishing**を用いて、GitHub Actionsでパッケージを自動公開するための手順をまとめたものです。
 
----
 
 # 1. Trusted Publishingとは？
 
@@ -29,7 +28,6 @@ PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直�
 - Secretsに何も保存しない  
 → **高セキュリティ & 設定が簡単**
 
----
 
 # 2. PyPI側の設定
 
@@ -59,7 +57,6 @@ PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直�
 - **New environment**をクリックし、上記で指定した名前（例: `pypi`）で環境を作成  
 - 任意の権限設定を行う（特に不要ならそのままでOK）
 
----
 
 # 3. GitHub Actionsの設定
 
@@ -139,11 +136,10 @@ jobs:
 > ````uses: pypa/gh-action-pypi-publish@release/v1````  
 > と指定し、常にrelease/v1系列の最新安定版を利用する構成としています。
 
----
 
 # 4. リリースして公開する
 
-1. GitHubで新しいReleaseを作成（例: [`v0.5.0`](https://github.com/akikuno/TSUMUGI-dev/releases/tag/0.5.0)）  
+1. GitHubで新しいReleaseを作成（例: [v0.5.0](https://github.com/akikuno/TSUMUGI-dev/releases/tag/0.5.0)）  
 2. Actionsが自動的に起動  
 3. PyPIにパッケージがアップロードされる  
 4. 反映されるまで10秒待つ  
