@@ -147,5 +147,5 @@ jobs:
 2. Actionsが自動的に起動  
 3. PyPIにパッケージがアップロードされる  
 4. 反映されるまで10秒待つ  
-5. https://pypi.org/project/`<プロジェクト名>`/ で公開を確認  
+5. 'https://pypi.org/project/<プロジェクト名>/' で公開を確認  
    例: https://pypi.org/project/TSUMUGI/ 
