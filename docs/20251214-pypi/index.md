@@ -1,4 +1,10 @@
-# PyPIへの公開手順 (2025年度版)
+---
+title: PyPIへの公開手順 (2025年度版)
+published: 2025-12-14
+tags: [Python, PyPI, パッケージ公開, GitHub Actions]
+category: 技術ドキュメント
+draft: false
+---
 
 このドキュメントは、PyPIが公式に提供する**Trusted Publishing**を用いて、GitHub Actionsでパッケージを自動公開するための手順をまとめたものです。
 
