@@ -11,8 +11,8 @@ draft: false
 
 # 1. Trusted Publishingとは？
 
-**Trusted Publishing（信頼できる公開）**は、  
-PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直接認証する仕組みです。
+Trusted Publishingは、  
+PyPIがOpenID Connect (OIDC)を用いてGitHub ActionsなどのCIから直接認証する仕組みです。
 
 この方式により、従来必要であった長期有効なAPIトークンをGitHub側に保存する必要がなくなります。
 
@@ -37,7 +37,7 @@ PyPIが**OpenID Connect (OIDC)**を用いてGitHub ActionsなどのCIから直�
    https://pypi.org/account/login/  
 2. 対象プロジェクトページへ  
 3. 左メニューから  
-   **“Publishing → Add a trusted publisher”**を開く  
+   “Publishing → Add a trusted publisher”を開く  
 4. フォームに以下を入力：
 
 - **PyPI Project Name**:  
