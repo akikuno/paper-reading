@@ -26,12 +26,12 @@ PyPIがOpenID Connect (OIDC)を用いてGitHub ActionsなどのCIから直接認
 - GitHub Actionsが短期（15分だけ有効）の**OIDCトークン**を発行  
 - PyPIがそのトークンを検証し、短命APIトークンを自動発行  
 - Secretsに何も保存しない  
-→ **高セキュリティ & 設定が簡単**
+→ **高セキュリティ**
 
 
 # 2. PyPI側の設定
 
-## 2-1. 既存プロジェクトをOIDC（Trusted Publishing）対応にする
+## 2-1. 既存プロジェクトをTrusted Publishing対応にする
 
 1. PyPIにログイン  
    https://pypi.org/account/login/  
