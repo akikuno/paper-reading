@@ -142,6 +142,6 @@ jobs:
 1. GitHubで新しいReleaseを作成（例: [v0.5.0](https://github.com/akikuno/TSUMUGI-dev/releases/tag/0.5.0)）  
 2. Actionsが自動的に起動  
 3. PyPIにパッケージがアップロードされる  
-4. 反映されるまで10秒待つ  
+4. 反映されるまで10秒待つ (爆速)  
 5. 'https://pypi.org/project/<プロジェクト名>/' で公開を確認  
    例: https://pypi.org/project/TSUMUGI/ 
