@@ -8,6 +8,7 @@ draft: false
 
 このドキュメントは、PyPIが公式に提供する**Trusted Publishing**を用いて、GitHub Actionsでパッケージを自動公開するための手順をまとめたものです。
 
+自作パッケージの[TSUMUGI](https://github.com/akikuno/TSUMUGI-dev)を、PyPIに登録した際の設定例を交えて説明します。
 
 # 1. Trusted Publishingとは？
 
@@ -145,3 +146,7 @@ jobs:
 4. 反映されるまで10秒待つ (爆速)  
 5. 'https://pypi.org/project/<プロジェクト名>/' で公開を確認  
    例: https://pypi.org/project/TSUMUGI/ 
+
+
+>[!NOTE]
+> バージョン更新は、GitHubでReleaseを作成するだけで自動的にPyPIへ公開されます。
