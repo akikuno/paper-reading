@@ -1,5 +1,5 @@
 ---
-title: PyPIへの公開手順 (2025年版)
+title: PyPIへのパッケージ登録手順 (2025年版)
 published: 2025-12-14
 tags: [Python, PyPI, パッケージ公開, GitHub Actions]
 category: 技術ドキュメント
