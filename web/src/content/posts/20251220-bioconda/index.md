@@ -87,9 +87,10 @@ mkdir -p metayaml
 - `build`セクションに`run_exports`を追加します。
 - `about`セクションに`home`、`dev_url`, `doc_url`を追加します。
 
->[!IMPORTANT]
-> `run_exports`と`home`は記載がないとリントが通らないため必須です。  
-> `dev_url`, `doc_url`は別のパッケージのレビューで指摘されたため、追記を推奨します。
+:::important
+`run_exports`と`home`は記載がないとリントが通らないため必須です。  
+`dev_url`, `doc_url`は別のパッケージのレビューで指摘されたため、追記を推奨します。  
+:::
 
 >[!NOTE]
 > run_exportsは、Biocondaパッケージを他のパッケージが利用するときに許容されるバージョン範囲を示します。
@@ -98,7 +99,7 @@ mkdir -p metayaml
 > 安定版(1.0.0)前はマイナーバージョンで破壊的変更が入る可能性が高いため、`max_pin="x.x"`を推奨します。  
 
 
-[最終的に作られたmeta.yaml](https://github.com/bioconda/bioconda-recipes/pull/60893/files)は以下のとおりです：
+[最終的なmeta.yaml](https://github.com/bioconda/bioconda-recipes/pull/60893/files)は、以下のとおりです：
 
 ```yaml
 
@@ -159,7 +160,7 @@ extra:
 
 ### 5. meta.yamlの配置
 
-生成・修正したmeta.yamlを、bioconda-recipesの`recipes/tsumugi/meta.yaml`として配置します。
+生成したmeta.yamlを、bioconda-recipesの`recipes/tsumugi/meta.yaml`として配置します。
 
 ```bash
 mkdir -p bioconda-recipes/recipes/tsumugi
@@ -194,6 +195,10 @@ Pull Requestを作成すると、自動テストが走ります。
 `@BiocondaBot please add label`
 
 とメンションします。
+
+:::important
+`@BiocondaBot please add label`を忘れると永遠にレビューしてくれないため、必ずコメントしてください。
+:::
 
 
 ### 8. マージと公開
