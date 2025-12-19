@@ -12,7 +12,7 @@ draft: false
 
 自作パッケージの[TSUMUGI](https://github.com/akikuno/TSUMUGI-dev)を、PyPIに登録した際の設定例を交えて説明します。
 
-# 1. Trusted Publishingとは？
+# Trusted Publishingとは？
 
 Trusted Publishingは、  
 PyPIがOpenID Connect (OIDC)を用いてGitHub ActionsなどのCIから直接認証する仕組みです。
@@ -32,9 +32,9 @@ PyPIがOpenID Connect (OIDC)を用いてGitHub ActionsなどのCIから直接認
 → **高セキュリティ**
 
 
-# 2. PyPI側の設定
+# PyPI側の設定
 
-## 2-1. 既存プロジェクトをTrusted Publishing対応にする
+## 既存プロジェクトをTrusted Publishing対応にする
 
 1. PyPIにログイン  
    https://pypi.org/account/login/  
@@ -61,7 +61,7 @@ PyPIがOpenID Connect (OIDC)を用いてGitHub ActionsなどのCIから直接認
 - 任意の権限設定を行う（特に不要ならそのままでOK）
 
 
-# 3. GitHub Actionsの設定
+# GitHub Actionsの設定
 
 `.github/workflows/pypi.yml`を作成します。  
 GitHubでリリースが公開されたときに自動的にPyPIへアップロードするワークフローの例を以下に示します。  
@@ -140,7 +140,7 @@ jobs:
 > と指定し、常にrelease/v1系列の最新安定版を利用する構成としています。
 
 
-# 4. リリースして公開する
+# リリースして公開する
 
 1. GitHubで新しいReleaseを作成（例: [v0.5.0](https://github.com/akikuno/TSUMUGI-dev/releases/tag/0.5.0)）  
 2. Actionsが自動的に起動  
