@@ -77,16 +77,18 @@ fi
 
 ## 3. grayskullでmeta.yamlを生成
 
+[grayskull](https://github.com/conda/grayskull/tree/main)はcondaパッケージのmeta.yamlを自動生成するツールです。  
+
 ```bash
 mkdir -p metayaml
 (cd metayaml && grayskull pypi TSUMUGI)
 ```
 
-上記により、`metayaml/TSUMUGI/meta.yaml`が生成されます。
+これにより、`metayaml/TSUMUGI/meta.yaml`が生成されます。
 
 ## 4. meta.yamlの修正
 
-生成されたmeta.yamlに、Biocondaへの登録に必要な以下の2点を追記します。  
+生成されたmeta.yamlに、Biocondaへの登録に必要な以下の項目を加筆します。  
 
 - `build`セクションに`run_exports`を追加します。
 - `about`セクションに`home`、`dev_url`, `doc_url`を追加します。
@@ -178,10 +180,13 @@ cp metayaml/TSUMUGI/meta.yaml bioconda-recipes/recipes/tsumugi/meta.yaml
 仮にブランチ名を`add-tsumugi-0.5.0`とした場合、以下のコマンドを実行します。
 
 ```bash
-git checkout -b add-tsumugi-0.5.0
-git add recipes/tsumugi/meta.yaml
-git commit -m "Add TSUMUGI version 0.5.0"
-git push origin add-tsumugi-0.5.0
+(
+  cd bioconda-recipes
+  git checkout -b add-tsumugi-0.5.0
+  git add recipes/tsumugi/meta.yaml
+  git commit -m "Add TSUMUGI version 0.5.0"
+  git push origin add-tsumugi-0.5.0
+)
 ```
 
 以下のURLにアクセスし、Pull Requestを作成します。
