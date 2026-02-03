@@ -36,7 +36,8 @@ draft: false
 ## 学習教材
 
 **この1冊で合格! 宮本翔太の統計検定(R)2級 テキスト&問題集**  
-https://amzn.asia/d/d9MuQwR
+
+[![book-stat](./book-stat.jpg)](https://amzn.asia/d/d9MuQwR)
 
 統計検定2級のCBTの過去問を始めに手を付けたのですが解説がほとんど理解できず、早々に断念しました。  
 その後は、この書籍1冊に集中して取り組みました。
