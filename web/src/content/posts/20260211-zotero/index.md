@@ -73,7 +73,7 @@ Zotero 8では、**[ファイル名変更は標準機能として自動化され
 
 しかし、PDFを指定フォルダへ移動することはできないため、そのためのプラグインとして、`ZotMoov`を使用します。
 
-:::note
+:::caution
 `ZotFile`は2022年以降更新されておらず、Zotero 7以降では使用できません。  
 https://github.com/jlegewie/zotfile/releases
 :::
