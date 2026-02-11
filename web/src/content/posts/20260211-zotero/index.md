@@ -69,7 +69,7 @@ Zotero 6までは、`ZotFile`というプラグインで以下を自動化して
 - ファイル名変更  
 - 指定フォルダへの移動  
 
-Zotero 8では、**ファイル名変更は標準機能として自動化されるようになりました🎊**
+Zotero 8では、**[ファイル名変更は標準機能として自動化されるようになりました](https://www.zotero.org/support/file_renaming)🎊**
 
 しかし、PDFを指定フォルダへ移動することはできないため、そのためのプラグインとして、`ZotMoov`を使用します。
 
@@ -81,7 +81,7 @@ https://github.com/jlegewie/zotfile/releases
 
 ### インストール
 
-以下からZotMoovの最新バージョン（Latest）をダウンロードします：  
+以下からZotMoovの最新バージョン（Latest）の`xpi`ファイルをダウンロードします：  
 https://github.com/wileyyugioh/zotmoov/releases
 
 次に、Zoteroの
@@ -118,4 +118,10 @@ Zotero 8とクラウドストレージを組み合わせることで、
 
 ようになります。
 
-研究効率を向上させるため、ぜひ設定しておくことをおすすめします。
+## 雑談
+
+Zotero 6まではZoteroをメインで使っていたのですが、Zotero 7で大幅にUIが変わった事と、Paperpileが人気になっていたこともあって、ここ数年はPaperpileを使っていました。
+
+ただ、PaperpileはWebアプリのためちょっとモッサリ感があるのと、少しですが課金があるので、Zoteroに戻ろうか、と思っていた矢先にZoter 8が出たので、これを気に再び使ってみることにしました。
+
+今年はZotero 8で快適な論文読み書き生活を送りたいです😁
