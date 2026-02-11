@@ -90,7 +90,7 @@ https://github.com/wileyyugioh/zotmoov/releases
 
 を開き、ダウンロードしたファイルをインストールします。
 
-![alt text](./fig2.png)
+![alt text](./fig3.png)
 
 
 ### ZotMoovの設定
@@ -101,7 +101,8 @@ https://github.com/wileyyugioh/zotmoov/releases
 
 に、**手順2で設定したフォルダ**を指定します。
 
-![alt text](./fig3.png)
+![alt text](./fig4.png)
+
 
 これで、論文PDFをZoteroに追加すると、自動的にクラウドストレージ内のフォルダへ保存されます。
 
