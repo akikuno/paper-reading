@@ -1,6 +1,6 @@
 ---
 title: Zotero 8による複数PCでの論文同期
-published: 2026-02-14
+published: 2026-02-11
 tags: [Zotero, 論文管理]
 category: 研究方法
 draft: false
