@@ -1,7 +1,7 @@
 ---
-title: DeepPheno：階層的分類による遺伝子欠損表現型の予測
-published: 2026-YY-DD
-tags: []
+title: DeepPheno 階層的分類による遺伝子欠損表現型の予測
+published: 2026-03-02
+tags: [オントロジー, 機械学習]
 category: 論文
 draft: false
 ---
