@@ -33,7 +33,7 @@ Copyright: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
-## 結果
+## 手法
 
 ### DeepPhenoの構造（Fig. 2, 3）
 
@@ -76,6 +76,8 @@ HPOの行列は、階層構造を二値化したものである。
 それぞれの値が、その遺伝子のLoFが各HPOを持つかどうかを表す予測値となる。  
 
 ---
+
+## 結果
 
 ### DeepPhenoの性能評価（Fig. 1）
 
