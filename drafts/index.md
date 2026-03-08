@@ -8,7 +8,6 @@ draft: false
 
 
 ![alt text](./fig1.png)
-<img alt="fig1" src="./fig1.png" width="50%">
 
 
 ## Admonitions
